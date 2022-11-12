@@ -7,6 +7,257 @@
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
     <Grid>
-            
+        <Grid Background="#FF00488B" Margin="0,0,-0.4,-0.4">
+            <Border Background="#FFF1F182" BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="173" Margin="209,175,0,0" VerticalAlignment="Top" Width="211"/>
+            <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="173" Margin="441,175,0,0" VerticalAlignment="Top" Width="468" Background="#FF3DAFB1"/>
+            <Button x:Name="b1" Content=" " HorizontalAlignment="Left" Height="28" Margin="219,191,0,0" VerticalAlignment="Top" Width="28" Background="White" Click="b1_Click"/>
+            <Button x:Name="b2" Content=" " HorizontalAlignment="Left" Height="28" Margin="219,224,0,0" VerticalAlignment="Top" Width="28" Background="White" Click="b2_Click"/>
+            <Button x:Name="b3" Content=" " HorizontalAlignment="Left" Height="29" Margin="219,271,0,0" VerticalAlignment="Top" Width="28" Background="White" Click="b3_Click"/>
+            <Button x:Name="b4" Content=" " HorizontalAlignment="Left" Height="29" Margin="219,305,0,0" VerticalAlignment="Top" Width="28" Background="White" RenderTransformOrigin="0.514,0.526" Click="b4_Click"/>
+            <Button x:Name="b5" Content=" " HorizontalAlignment="Left" Height="28" Margin="252,191,0,0" VerticalAlignment="Top" Width="28" Background="White" Click="b5_Click"/>
+            <Button x:Name="b6" Content=" " HorizontalAlignment="Left" Height="28" Margin="252,224,0,0" VerticalAlignment="Top" Width="28" Background="White" Click="b6_Click"/>
+            <Button x:Name="b7" Content=" " HorizontalAlignment="Left" Height="29" Margin="252,271,0,0" VerticalAlignment="Top" Width="28" Background="White" Click="b7_Click"/>
+            <Button x:Name="b8" Content=" " HorizontalAlignment="Left" Height="29" Margin="252,305,0,0" VerticalAlignment="Top" Width="28" Background="White" Click="b8_Click"/>
+            <Button x:Name="b9" Content=" " HorizontalAlignment="Left" Height="28" Margin="285,191,0,0" VerticalAlignment="Top" Width="28" Background="White" Click="b9_Click"/>
+            <Button x:Name="b10" Content=" " HorizontalAlignment="Left" Height="28" Margin="285,224,0,0" VerticalAlignment="Top" Width="28" Background="White" Click="b10_Click"/>
+            <Button x:Name="b11" Content=" " HorizontalAlignment="Left" Height="29" Margin="285,271,0,0" VerticalAlignment="Top" Width="28" Background="White" Click="b11_Click"/>
+            <Button x:Name="b12" Content=" " HorizontalAlignment="Left" Height="29" Margin="285,305,0,0" VerticalAlignment="Top" Width="28" Background="White" Click="b12_Click"/>
+            <Button x:Name="b13" Content=" " HorizontalAlignment="Left" Height="28" Margin="318,191,0,0" VerticalAlignment="Top" Width="28" Background="White" Click="b13_Click"/>
+            <Button x:Name="b14" Content=" " HorizontalAlignment="Left" Height="28" Margin="318,224,0,0" VerticalAlignment="Top" Width="28" Background="White" Click="b14_Click"/>
+            <Button x:Name="b15" Content=" " HorizontalAlignment="Left" Height="29" Margin="318,271,0,0" VerticalAlignment="Top" Width="28" Background="White" Click="b15_Click"/>
+            <Button x:Name="b16" Content=" " HorizontalAlignment="Left" Height="29" Margin="318,305,0,0" VerticalAlignment="Top" Width="28" Background="White" Click="b16_Click"/>
+            <Button x:Name="b17" Content=" " HorizontalAlignment="Left" Height="28" Margin="351,191,0,0" VerticalAlignment="Top" Width="28" Background="White" Click="b17_Click"/>
+            <Button x:Name="b18" Content=" " HorizontalAlignment="Left" Height="28" Margin="351,224,0,0" VerticalAlignment="Top" Width="28" Background="White" Click="b18_Click"/>
+            <Button x:Name="b19" Content=" " HorizontalAlignment="Left" Height="29" Margin="351,271,0,0" VerticalAlignment="Top" Width="28" Background="White" Click="b19_Click"/>
+            <Button x:Name="b20" Content=" " HorizontalAlignment="Left" Height="29" Margin="351,305,0,0" VerticalAlignment="Top" Width="28" Background="White" Click="b20_Click"/>
+            <Button x:Name="b21" Content=" " HorizontalAlignment="Left" Height="28" Margin="384,191,0,0" VerticalAlignment="Top" Width="28" Background="White" Click="b21_Click"/>
+            <Button x:Name="b22" Content=" " HorizontalAlignment="Left" Height="28" Margin="384,224,0,0" VerticalAlignment="Top" Width="28" Background="White" Click="b22_Click"/>
+            <Button x:Name="b23" Content=" " HorizontalAlignment="Left" Height="29" Margin="384,271,0,0" VerticalAlignment="Top" Width="28" Background="White" Click="b23_Click"/>
+            <Button x:Name="b24" Content=" " HorizontalAlignment="Left" Height="29" Margin="384,305,0,0" VerticalAlignment="Top" Width="28" Background="White" Click="b24_Click"/>
+            <Button x:Name="b25" Content=" " HorizontalAlignment="Left" Height="18" Margin="447,188,0,0" VerticalAlignment="Top" Width="28" Background="White" Click="b25_Click"/>
+            <Button x:Name="b26" Content=" " HorizontalAlignment="Left" Height="18" Margin="447,211,0,0" VerticalAlignment="Top" Width="28" Background="White" Click="b26_Click"/>
+            <Button x:Name="b27" Content=" " HorizontalAlignment="Left" Height="18" Margin="447,234,0,0" VerticalAlignment="Top" Width="28" Background="White" Click="b27_Click"/>
+            <Button x:Name="b28" Content=" " HorizontalAlignment="Left" Height="18" Margin="447,271,0,0" VerticalAlignment="Top" Width="28" Background="White" Click="b28_Click"/>
+            <Button x:Name="b29" Content=" " HorizontalAlignment="Left" Height="18" Margin="447,294,0,0" VerticalAlignment="Top" Width="28" Background="White" Click="b29_Click"/>
+            <Button x:Name="b30" Content=" " HorizontalAlignment="Left" Height="18" Margin="447,317,0,0" VerticalAlignment="Top" Width="28" Background="White" Click="b30_Click"/>
+            <Button x:Name="b31" Content=" " HorizontalAlignment="Left" Height="18" Margin="480,188,0,0" VerticalAlignment="Top" Width="28" Background="White" Click="b31_Click"/>
+            <Button x:Name="b32" Content=" " HorizontalAlignment="Left" Height="18" Margin="480,211,0,0" VerticalAlignment="Top" Width="28" Background="White" Click="b32_Click"/>
+            <Button x:Name="b33" Content=" " HorizontalAlignment="Left" Height="18" Margin="480,234,0,0" VerticalAlignment="Top" Width="28" Background="White" Click="b33_Click"/>
+            <Button x:Name="b34" Content=" " HorizontalAlignment="Left" Height="18" Margin="480,271,0,0" VerticalAlignment="Top" Width="28" Background="White" Click="b34_Click"/>
+            <Button x:Name="b35" Content=" " HorizontalAlignment="Left" Height="18" Margin="480,294,0,0" VerticalAlignment="Top" Width="28" Background="White" Click="b35_Click"/>
+            <Button x:Name="b36" Content=" " HorizontalAlignment="Left" Height="18" Margin="480,317,0,0" VerticalAlignment="Top" Width="28" Background="White" Click="b36_Click"/>
+            <Button x:Name="b37" Content=" " HorizontalAlignment="Left" Height="18" Margin="513,188,0,0" VerticalAlignment="Top" Width="28" Background="White" Click="b37_Click"/>
+            <Button x:Name="b38" Content=" " HorizontalAlignment="Left" Height="18" Margin="513,211,0,0" VerticalAlignment="Top" Width="28" Background="White" Click="b38_Click"/>
+            <Button x:Name="b39" Content=" " HorizontalAlignment="Left" Height="18" Margin="513,234,0,0" VerticalAlignment="Top" Width="28" Background="White" Click="b39_Click"/>
+            <Button x:Name="b40" Content=" " HorizontalAlignment="Left" Height="18" Margin="513,271,0,0" VerticalAlignment="Top" Width="28" Background="White" Click="b40_Click"/>
+            <Button x:Name="b41" Content=" " HorizontalAlignment="Left" Height="18" Margin="513,294,0,0" VerticalAlignment="Top" Width="28" Background="White" Click="b41_Click"/>
+            <Button x:Name="b42" Content=" " HorizontalAlignment="Left" Height="18" Margin="513,317,0,0" VerticalAlignment="Top" Width="28" Background="White" Click="b42_Click"/>
+            <Button x:Name="b43" Content=" " HorizontalAlignment="Left" Height="18" Margin="546,188,0,0" VerticalAlignment="Top" Width="28" Background="White" Click="b43_Click"/>
+            <Button x:Name="b44" Content=" " HorizontalAlignment="Left" Height="18" Margin="546,211,0,0" VerticalAlignment="Top" Width="28" Background="White" Click="b44_Click"/>
+            <Button x:Name="b45" Content=" " HorizontalAlignment="Left" Height="18" Margin="546,234,0,0" VerticalAlignment="Top" Width="28" Background="White" Click="b45_Click"/>
+            <Button x:Name="b46" Content=" " HorizontalAlignment="Left" Height="18" Margin="546,271,0,0" VerticalAlignment="Top" Width="28" Background="White" Click="b46_Click"/>
+            <Button x:Name="b47" Content=" " HorizontalAlignment="Left" Height="18" Margin="546,294,0,0" VerticalAlignment="Top" Width="28" Background="White" Click="b47_Click"/>
+            <Button x:Name="b48" Content=" " HorizontalAlignment="Left" Height="18" Margin="546,317,0,0" VerticalAlignment="Top" Width="28" Background="White" Click="b48_Click"/>
+            <Button x:Name="b49" Content=" " HorizontalAlignment="Left" Height="18" Margin="579,188,0,0" VerticalAlignment="Top" Width="28" Background="White" Click="b49_Click"/>
+            <Button x:Name="b50" Content=" " HorizontalAlignment="Left" Height="18" Margin="579,211,0,0" VerticalAlignment="Top" Width="28" Background="White" Click="b50_Click"/>
+            <Button x:Name="b51" Content=" " HorizontalAlignment="Left" Height="18" Margin="579,234,0,0" VerticalAlignment="Top" Width="28" Background="White" Click="b51_Click"/>
+            <Button x:Name="b52" Content=" " HorizontalAlignment="Left" Height="18" Margin="579,271,0,0" VerticalAlignment="Top" Width="28" Background="White" Click="b52_Click"/>
+            <Button x:Name="b53" Content=" " HorizontalAlignment="Left" Height="18" Margin="579,294,0,0" VerticalAlignment="Top" Width="28" Background="White" Click="b53_Click"/>
+            <Button x:Name="b54" Content=" " HorizontalAlignment="Left" Height="18" Margin="579,317,0,0" VerticalAlignment="Top" Width="28" Background="White" Click="b54_Click"/>
+            <Button x:Name="b55" Content=" " HorizontalAlignment="Left" Height="18" Margin="612,188,0,0" VerticalAlignment="Top" Width="28" Background="White" Click="b55_Click"/>
+            <Button x:Name="b56" Content=" " HorizontalAlignment="Left" Height="18" Margin="612,211,0,0" VerticalAlignment="Top" Width="28" Background="White" Click="b56_Click"/>
+            <Button x:Name="b57" Content=" " HorizontalAlignment="Left" Height="18" Margin="612,234,0,0" VerticalAlignment="Top" Width="28" Background="White" Click="b57_Click"/>
+            <Button x:Name="b58" Content=" " HorizontalAlignment="Left" Height="18" Margin="612,271,0,0" VerticalAlignment="Top" Width="28" Background="White" Click="b58_Click"/>
+            <Button x:Name="b59" Content=" " HorizontalAlignment="Left" Height="18" Margin="612,294,0,0" VerticalAlignment="Top" Width="28" Background="White" Click="b59_Click"/>
+            <Button x:Name="b60" Content=" " HorizontalAlignment="Left" Height="18" Margin="612,317,0,0" VerticalAlignment="Top" Width="28" Background="White" Click="b60_Click"/>
+            <Button x:Name="b61" Content=" " HorizontalAlignment="Left" Height="18" Margin="645,188,0,0" VerticalAlignment="Top" Width="28" Background="White" Click="b61_Click"/>
+            <Button x:Name="b62" Content=" " HorizontalAlignment="Left" Height="18" Margin="645,211,0,0" VerticalAlignment="Top" Width="28" Background="White" Click="b62_Click"/>
+            <Button x:Name="b63" Content=" " HorizontalAlignment="Left" Height="18" Margin="645,234,0,0" VerticalAlignment="Top" Width="28" Background="White" Click="b63_Click"/>
+            <Button x:Name="b64" Content=" " HorizontalAlignment="Left" Height="18" Margin="645,271,0,0" VerticalAlignment="Top" Width="28" Background="White" Click="b64_Click"/>
+            <Button x:Name="b65" Content=" " HorizontalAlignment="Left" Height="18" Margin="645,294,0,0" VerticalAlignment="Top" Width="28" Background="White" Click="b65_Click"/>
+            <Button x:Name="b66" Content=" " HorizontalAlignment="Left" Height="18" Margin="645,317,0,0" VerticalAlignment="Top" Width="28" Background="White" Click="b66_Click"/>
+            <Button x:Name="b67" Content=" " HorizontalAlignment="Left" Height="18" Margin="678,188,0,0" VerticalAlignment="Top" Width="28" Background="White" Click="b67_Click"/>
+            <Button x:Name="b68" Content=" " HorizontalAlignment="Left" Height="18" Margin="678,211,0,0" VerticalAlignment="Top" Width="28" Background="White" Click="b68_Click"/>
+            <Button x:Name="b69" Content=" " HorizontalAlignment="Left" Height="18" Margin="678,234,0,0" VerticalAlignment="Top" Width="28" Background="White" Click="b69_Click"/>
+            <Button x:Name="b70" Content=" " HorizontalAlignment="Left" Height="18" Margin="678,271,0,0" VerticalAlignment="Top" Width="28" Background="White" Click="b70_Click"/>
+            <Button x:Name="b71" Content=" " HorizontalAlignment="Left" Height="18" Margin="678,294,0,0" VerticalAlignment="Top" Width="28" Background="White" Click="b71_Click"/>
+            <Button x:Name="b72" Content=" " HorizontalAlignment="Left" Height="18" Margin="678,317,0,0" VerticalAlignment="Top" Width="28" Background="White" Click="b72_Click"/>
+            <Button x:Name="b73" Content=" " HorizontalAlignment="Left" Height="18" Margin="711,188,0,0" VerticalAlignment="Top" Width="28" Background="White" Click="b73_Click"/>
+            <Button x:Name="b74" Content=" " HorizontalAlignment="Left" Height="18" Margin="711,211,0,0" VerticalAlignment="Top" Width="28" Background="White" Click="b74_Click"/>
+            <Button x:Name="b75" Content=" " HorizontalAlignment="Left" Height="18" Margin="711,234,0,0" VerticalAlignment="Top" Width="28" Background="White" Click="b75_Click"/>
+            <Button x:Name="b76" Content=" " HorizontalAlignment="Left" Height="18" Margin="711,271,0,0" VerticalAlignment="Top" Width="28" Background="White" Click="b76_Click"/>
+            <Button x:Name="b77" Content=" " HorizontalAlignment="Left" Height="18" Margin="711,294,0,0" VerticalAlignment="Top" Width="28" Background="White" Click="b77_Click"/>
+            <Button x:Name="b78" Content=" " HorizontalAlignment="Left" Height="18" Margin="711,317,0,0" VerticalAlignment="Top" Width="28" Background="White" Click="b78_Click"/>
+            <Button x:Name="b79" Content=" " HorizontalAlignment="Left" Height="18" Margin="744,188,0,0" VerticalAlignment="Top" Width="28" Background="White" Click="b79_Click"/>
+            <Button x:Name="b80" Content=" " HorizontalAlignment="Left" Height="18" Margin="744,211,0,0" VerticalAlignment="Top" Width="28" Background="White" Click="b80_Click"/>
+            <Button x:Name="b81" Content=" " HorizontalAlignment="Left" Height="18" Margin="744,234,0,0" VerticalAlignment="Top" Width="28" Background="White" Click="b81_Click"/>
+            <Button x:Name="b82" Content=" " HorizontalAlignment="Left" Height="18" Margin="744,271,0,0" VerticalAlignment="Top" Width="28" Background="White" Click="b82_Click"/>
+            <Button x:Name="b83" Content=" " HorizontalAlignment="Left" Height="18" Margin="744,294,0,0" VerticalAlignment="Top" Width="28" Background="White" Click="b83_Click"/>
+            <Button x:Name="b84" Content=" " HorizontalAlignment="Left" Height="18" Margin="744,317,0,0" VerticalAlignment="Top" Width="28" Background="White" Click="b84_Click"/>
+            <Button x:Name="b85" Content=" " HorizontalAlignment="Left" Height="18" Margin="777,188,0,0" VerticalAlignment="Top" Width="28" Background="White" Click="b85_Click"/>
+            <Button x:Name="b86" Content=" " HorizontalAlignment="Left" Height="18" Margin="777,211,0,0" VerticalAlignment="Top" Width="28" Background="White" Click="b86_Click"/>
+            <Button x:Name="b87" Content=" " HorizontalAlignment="Left" Height="18" Margin="777,234,0,0" VerticalAlignment="Top" Width="28" Background="White" Click="b87_Click"/>
+            <Button x:Name="b88" Content=" " HorizontalAlignment="Left" Height="18" Margin="777,271,0,0" VerticalAlignment="Top" Width="28" Background="White" Click="b88_Click"/>
+            <Button x:Name="b89" Content=" " HorizontalAlignment="Left" Height="18" Margin="777,294,0,0" VerticalAlignment="Top" Width="28" Background="White" Click="b89_Click"/>
+            <Button x:Name="b90" Content=" " HorizontalAlignment="Left" Height="18" Margin="777,317,0,0" VerticalAlignment="Top" Width="28" Background="White" Click="b90_Click"/>
+            <Button x:Name="b91" Content=" " HorizontalAlignment="Left" Height="18" Margin="810,188,0,0" VerticalAlignment="Top" Width="28" Background="White" Click="b91_Click"/>
+            <Button x:Name="b92" Content=" " HorizontalAlignment="Left" Height="18" Margin="810,211,0,0" VerticalAlignment="Top" Width="28" Background="White" Click="b92_Click"/>
+            <Button x:Name="b93" Content=" " HorizontalAlignment="Left" Height="18" Margin="810,234,0,0" VerticalAlignment="Top" Width="28" Background="White" Click="b93_Click"/>
+            <Button x:Name="b94" Content=" " HorizontalAlignment="Left" Height="18" Margin="810,271,0,0" VerticalAlignment="Top" Width="28" Background="White" Click="b94_Click"/>
+            <Button x:Name="b95" Content=" " HorizontalAlignment="Left" Height="18" Margin="810,294,0,0" VerticalAlignment="Top" Width="28" Background="White" Click="b95_Click"/>
+            <Button x:Name="b96" Content=" " HorizontalAlignment="Left" Height="18" Margin="810,317,0,0" VerticalAlignment="Top" Width="28" Background="White" Click="b96_Click"/>
+            <Button x:Name="b97" Content=" " HorizontalAlignment="Left" Height="18" Margin="843,188,0,0" VerticalAlignment="Top" Width="28" Background="White" Click="b97_Click"/>
+            <Button x:Name="b98" Content=" " HorizontalAlignment="Left" Height="18" Margin="843,211,0,0" VerticalAlignment="Top" Width="28" Background="White" Click="b98_Click"/>
+            <Button x:Name="b99" Content=" " HorizontalAlignment="Left" Height="18" Margin="843,234,0,0" VerticalAlignment="Top" Width="28" Background="White" Click="b99_Click"/>
+            <Button x:Name="b100" Content=" " HorizontalAlignment="Left" Height="18" Margin="843,271,0,0" VerticalAlignment="Top" Width="28" Background="White" Click="b100_Click"/>
+            <Button x:Name="b101" Content=" " HorizontalAlignment="Left" Height="18" Margin="843,294,0,0" VerticalAlignment="Top" Width="28" Background="White" Click="b101_Click"/>
+            <Button x:Name="b102" Content=" " HorizontalAlignment="Left" Height="18" Margin="843,317,0,0" VerticalAlignment="Top" Width="28" Background="White" Click="b102_Click"/>
+            <Button x:Name="b103" Content=" " HorizontalAlignment="Left" Height="18" Margin="876,188,0,0" VerticalAlignment="Top" Width="28" Background="White" Click="b103_Click"/>
+            <Button x:Name="b104" Content=" " HorizontalAlignment="Left" Height="18" Margin="876,211,0,0" VerticalAlignment="Top" Width="28" Background="White" Click="b104_Click"/>
+            <Button x:Name="b105" Content=" " HorizontalAlignment="Left" Height="18" Margin="876,234,0,0" VerticalAlignment="Top" Width="28" Background="White" Click="b105_Click"/>
+            <Button x:Name="b106" Content=" " HorizontalAlignment="Left" Height="18" Margin="876,271,0,0" VerticalAlignment="Top" Width="28" Background="White" Click="b106_Click"/>
+            <Label Content="A" HorizontalAlignment="Left" Height="24" Margin="420,185,0,0" VerticalAlignment="Top" Width="22" FontSize="11" RenderTransformOrigin="0.5,0.5" Background="{x:Null}">
+                <Label.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform Angle="-0.228"/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </Label.RenderTransform>
+            </Label>
+            <Label Content="B" HorizontalAlignment="Left" Height="22" Margin="421,209,0,0" VerticalAlignment="Top" Width="21" FontSize="11" RenderTransformOrigin="0.5,0.5">
+                <Label.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform Angle="-0.81"/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </Label.RenderTransform>
+            </Label>
+            <Label Content="C" HorizontalAlignment="Left" Height="22" Margin="420,232,0,0" VerticalAlignment="Top" Width="21" FontSize="11" RenderTransformOrigin="0.5,0.5">
+                <Label.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform Angle="-0.81"/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </Label.RenderTransform>
+            </Label>
+            <Label Content="D" HorizontalAlignment="Left" Height="22" Margin="420,266,0,0" VerticalAlignment="Top" Width="20" FontSize="11" RenderTransformOrigin="0.5,0.5">
+                <Label.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform Angle="-0.81"/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </Label.RenderTransform>
+            </Label>
+            <Label Content="E" HorizontalAlignment="Left" Height="25" Margin="420,291,0,0" VerticalAlignment="Top" Width="22" FontSize="11" RenderTransformOrigin="0.5,0.5">
+                <Label.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform Angle="-0.81"/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </Label.RenderTransform>
+            </Label>
+            <Label Content="F" HorizontalAlignment="Left" Height="23" Margin="421,315,0,0" VerticalAlignment="Top" Width="22" FontSize="11" RenderTransformOrigin="0.5,0.5">
+                <Label.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform Angle="-0.81"/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </Label.RenderTransform>
+            </Label>
+            <Label Content="1" HorizontalAlignment="Left" Height="25" Margin="227,250,0,0" VerticalAlignment="Top" Width="15" FontSize="11"/>
+            <Label Content="2" HorizontalAlignment="Left" Height="25" Margin="261,250,0,0" VerticalAlignment="Top" Width="19" FontSize="11"/>
+            <Label Content="3" HorizontalAlignment="Left" Height="25" Margin="291,250,0,0" VerticalAlignment="Top" Width="17" FontSize="11"/>
+            <Label Content="4" HorizontalAlignment="Left" Height="23" Margin="325,250,0,0" VerticalAlignment="Top" Width="21" FontSize="11"/>
+            <Label Content="5" HorizontalAlignment="Left" Height="25" Margin="358,250,0,0" VerticalAlignment="Top" Width="18" FontSize="11"/>
+            <Label Content="6" HorizontalAlignment="Left" Height="23" Margin="390,250,0,0" VerticalAlignment="Top" Width="19" FontSize="11"/>
+            <Label Content="7" HorizontalAlignment="Left" Height="23" Margin="454,250,0,0" VerticalAlignment="Top" Width="18" FontSize="11"/>
+            <Label Content="8" HorizontalAlignment="Left" Height="23" Margin="487,250,0,0" VerticalAlignment="Top" Width="17" FontSize="11"/>
+            <Label Content="9" HorizontalAlignment="Left" Height="23" Margin="519,250,0,0" VerticalAlignment="Top" Width="17" FontSize="11"/>
+            <Label Content="10" HorizontalAlignment="Left" Height="23" Margin="551,250,0,0" VerticalAlignment="Top" Width="28" FontSize="11"/>
+            <Label Content="11" HorizontalAlignment="Left" Height="21" Margin="584,250,0,0" VerticalAlignment="Top" Width="23" FontSize="11"/>
+            <Label Content="12" HorizontalAlignment="Left" Height="23" Margin="618,250,0,0" VerticalAlignment="Top" Width="27" FontSize="11"/>
+            <Label Content="13" HorizontalAlignment="Left" Height="23" Margin="650,250,0,0" VerticalAlignment="Top" Width="23" FontSize="11"/>
+            <Label Content="14" HorizontalAlignment="Left" Height="23" Margin="680,248,0,0" VerticalAlignment="Top" Width="26" FontSize="11"/>
+            <Label Content="15" HorizontalAlignment="Left" Height="25" Margin="715,250,0,0" VerticalAlignment="Top" Width="26" FontSize="11"/>
+            <Label Content="16" HorizontalAlignment="Left" Height="22" Margin="746,250,0,0" VerticalAlignment="Top" Width="26" FontSize="11"/>
+            <Label Content="17" HorizontalAlignment="Left" Height="23" Margin="781,250,0,0" VerticalAlignment="Top" Width="24" FontSize="11"/>
+            <Label Content="18" HorizontalAlignment="Left" Height="23" Margin="815,250,0,0" VerticalAlignment="Top" Width="26" FontSize="11"/>
+            <Label Content="19" HorizontalAlignment="Left" Height="23" Margin="846,249,0,0" VerticalAlignment="Top" Width="23" FontSize="11"/>
+            <Label Content="20" HorizontalAlignment="Left" Height="23" Margin="882,249,0,0" VerticalAlignment="Top" Width="27" FontSize="11"/>
+            <Button Content=" " HorizontalAlignment="Left" Height="18" Margin="23,158,0,0" VerticalAlignment="Top" Width="28" Background="Red"/>
+            <Button Content=" " HorizontalAlignment="Left" Height="18" Margin="23,98,0,0" VerticalAlignment="Top" Width="28" Background="#FF0031FF"/>
+            <Label Content="Klasa biznes" HorizontalAlignment="Left" Height="31" Margin="261,139,0,0" VerticalAlignment="Top" Width="180" Foreground="White" FontFamily="Calibri Light" FontSize="20"/>
+            <Label Content="Klasa ekonomiczna" HorizontalAlignment="Left" Height="30" Margin="602,138,0,0" VerticalAlignment="Top" Width="182" Foreground="White" FontFamily="Calibri Light" FontSize="20" FontWeight="Normal" Background="#00000000"/>
+            <Label Content="- Zaznaczone" HorizontalAlignment="Left" Height="27" Margin="56,95,0,0" VerticalAlignment="Top" Width="87" Foreground="White" FontFamily="Calibri Light"/>
+            <Label Content="- Zajęte" HorizontalAlignment="Left" Height="27" Margin="56,155,0,0" VerticalAlignment="Top" Width="64" Foreground="White" FontFamily="Calibri Light"/>
+            <Button Content=" " HorizontalAlignment="Left" Height="18" Margin="23,126,0,0" VerticalAlignment="Top" Width="28" Background="White"/>
+            <Label Content="- Wolne" HorizontalAlignment="Left" Height="27" Margin="56,123,0,0" VerticalAlignment="Top" Width="87" Foreground="White" FontFamily="Calibri Light"/>
+            <Label Content="Oznaczenia:" HorizontalAlignment="Left" Height="40" Margin="23,53,0,0" VerticalAlignment="Top" Width="144" FontSize="18" Foreground="White" FontFamily="Calibri Light"/>
+            <Label Content="A" HorizontalAlignment="Left" Height="24" Margin="184,194,0,0" VerticalAlignment="Top" Width="22" FontSize="11" RenderTransformOrigin="0.5,0.5" Background="{x:Null}">
+                <Label.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform Angle="-0.228"/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </Label.RenderTransform>
+            </Label>
+            <Label Content="B" HorizontalAlignment="Left" Height="22" Margin="183,231,0,0" VerticalAlignment="Top" Width="21" FontSize="11" RenderTransformOrigin="0.5,0.5">
+                <Label.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform Angle="-0.81"/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </Label.RenderTransform>
+            </Label>
+            <Label Content="C" HorizontalAlignment="Left" Height="22" Margin="182,275,0,0" VerticalAlignment="Top" Width="21" FontSize="11" RenderTransformOrigin="0.5,0.5">
+                <Label.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform Angle="-0.81"/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </Label.RenderTransform>
+            </Label>
+            <Label Content="D" HorizontalAlignment="Left" Height="22" Margin="182,313,0,0" VerticalAlignment="Top" Width="20" FontSize="11" RenderTransformOrigin="0.5,0.5">
+                <Label.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform Angle="-0.81"/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </Label.RenderTransform>
+            </Label>
+            <Button x:Name="Powrot" Content="Powrót" HorizontalAlignment="Left" Height="28" Margin="23,270,0,0" VerticalAlignment="Top" Width="89" Click="Powrot_Click" Background="#FFE9E5DC" Foreground="Navy"/>
+            <Button Content="Potwierdź" HorizontalContentAlignment="Center" HorizontalAlignment="Left" Height="28" Margin="23,224,0,0" VerticalAlignment="Top" Width="89" Click="Button_Click" Background="#FFE9E5DC" Foreground="Navy"/>
+            <Label Content="Zaznacz miejsca które chcesz zarezerwować dla   pasażerów" HorizontalAlignment="Left" Height="49" Margin="167,9,0,0" VerticalAlignment="Top" Width="791" FontSize="28" Foreground="White" FontFamily="Calibri Light"/>
+            <Label x:Name="liczbaPasazerow" Content="0" HorizontalAlignment="Left" Height="49" Margin="698,7,0,0" VerticalAlignment="Top" Width="26" FontSize="28" Foreground="White"/>
+            <Label x:Name="nazwaLotu" Content="Label" HorizontalAlignment="Left" Margin="351,64,0,0" VerticalAlignment="Top" Width="598" FontSize="28" Foreground="White" FontFamily="Calibri Light"/>
+            <Label Content="Wybrany lot :" HorizontalAlignment="Left" Height="49" Margin="167,64,0,0" VerticalAlignment="Top" Width="193" Foreground="White" FontSize="28" FontFamily="Calibri Light"/>
+            <Button x:Name="b108" Content=" " HorizontalAlignment="Left" Height="18" Margin="876,317,0,0" VerticalAlignment="Top" Width="28" Background="White" Click="b108_Click"/>
+            <Button x:Name="b107" Content=" " HorizontalAlignment="Left" Height="18" Margin="876,294,0,0" VerticalAlignment="Top" Width="28" Background="White" Click="b107_Click"/>
+
+
+
+
+        </Grid>
+
     </Grid>
 </UserControl>

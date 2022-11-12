@@ -1,0 +1,87 @@
+﻿<UserControl x:Class="AirplaneReservation.Views.PassengerAmountView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:AirplaneReservation.Views"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+    <Grid Background="#FF00488B">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="260"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="200"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <Grid Grid.Row="1" 
+              Grid.Column="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="2*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="2*"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+
+            <Label 
+                Content="WYBIERZ LICZBE PASAŻERÓW"
+                Grid.ColumnSpan="3"
+                FontSize="18"
+                Foreground="White"
+                HorizontalAlignment="Center"
+                VerticalAlignment="Center"/>
+            <Label Content="{Binding PassengerAmount}"
+                Grid.Row="1"
+                Grid.Column="1"
+                FontSize="18"
+                Foreground="White"
+                HorizontalAlignment="Center"
+                VerticalAlignment="Center"/>
+            <Button
+                Grid.Row="1"
+                Background="#FF00488B"
+                BorderBrush="Transparent"
+                Content="&lt;="
+                FontSize="38"
+                Foreground="White"
+                Command="{Binding LessPassengersCommand}"/>
+            <Button
+                Grid.Row="1"
+                Grid.Column="2"
+                Background="#FF00488B"
+                BorderBrush="Transparent"
+                Content="=>"
+                FontSize="38"
+                Foreground="White"
+                Command="{Binding MorePassengersCommand}"/>
+            <Button
+                Grid.Row="2"
+                Grid.Column="0"
+                Background="#FF00488B"
+                BorderBrush="Transparent"
+                Content="POWRÓT"
+                FontSize="12"
+                Foreground="White"
+                Margin="10"
+                Command="{Binding TimetableNavigationCommand}"/>
+            <Button
+                Grid.Row="2"
+                Grid.Column="2"
+                Background="#FF00488B"
+                BorderBrush="Transparent"
+                Content="ZAMÓW"
+                FontSize="12"
+                Foreground="White"
+                Margin="10"
+                Command="{Binding ReservationNavigationCommand}"/>
+        </Grid>
+    </Grid>
+</UserControl>

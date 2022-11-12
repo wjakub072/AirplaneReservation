@@ -1,10 +1,6 @@
 ﻿using AirplaneReservation.Stores;
 using AirplaneReservation.ViewModels;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace AirplaneReservation.Services
 {

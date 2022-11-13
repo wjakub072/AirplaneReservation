@@ -1,6 +1,6 @@
 ﻿using AirplaneReservation.Services;
 
-namespace AirplaneReservation.Commands.PassengerAmountCommands
+namespace AirplaneReservation.Commands
 {
     internal class TimetableNavigationCommand : CommandBase
     {

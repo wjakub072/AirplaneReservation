@@ -16,11 +16,11 @@ using System.Windows.Shapes;
 namespace AirplaneReservation.Views
 {
     /// <summary>
-    /// Interaction logic for oskars.xaml
+    /// Interaction logic for ConfirmationView.xaml
     /// </summary>
-    public partial class oskars : UserControl
+    public partial class ConfirmationView : UserControl
     {
-        public oskars()
+        public ConfirmationView()
         {
             InitializeComponent();
         }

@@ -37,11 +37,16 @@ namespace AirplaneReservation
             //viewmodels
             services.AddSingleton<MainViewModel>();
             services.AddSingleton<TimetableViewModel>(tt =>
-                new TimetableViewModel(TimetableToPassengerAmountNavigation())
-                );
-            services.AddSingleton<PassengerAmountViewModel>(pa => 
+                new TimetableViewModel(TimetableToPassengerAmountNavigation()));
+
+            services.AddTransient<PassengerAmountViewModel>(pa => 
                 new PassengerAmountViewModel(TimetableNavigation(), PassengerAmountToReservationNavigation()));
 
+            services.AddTransient<ReservationViewModel>(r =>
+                new ReservationViewModel(TimetableNavigation(), ReservationToConfirmationNavigation()));
+
+            services.AddTransient<ConfirmationViewModel>(c =>
+                new ConfirmationViewModel(TimetableNavigation()));
             //views
             services.AddSingleton<MainWindow>(m => new MainWindow()
             {
@@ -95,6 +100,12 @@ namespace AirplaneReservation
                         reservationViewModel.SelectedFlight = parameter as Flight;
                         return reservationViewModel;
                     });
+        }
+
+        private INavigationService ReservationToConfirmationNavigation()
+        {
+            return new NavigationService(_host.Services.GetRequiredService<NavigationStore>(),
+                () => _host.Services.GetRequiredService<ConfirmationViewModel>());
         }
     }
 }

@@ -9,7 +9,7 @@
     <Grid Background="#FF00488B">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="10" />
-            <ColumnDefinition Width="180" />
+            <ColumnDefinition Width="140" />
             <ColumnDefinition Width="*" />
             <ColumnDefinition Width="2*" />
             <ColumnDefinition Width="10" />
@@ -33,7 +33,6 @@
         <Label Grid.Row="2"
                Grid.Column="2"
                Grid.ColumnSpan="2"
-               HorizontalAlignment="Center"
                Content="{Binding FlightInformation}"
                Foreground="White"
                FontSize="22" />
@@ -44,35 +43,35 @@
             <StackPanel Orientation="Horizontal" 
                         Margin="5">
                 <Border Padding="3"
-                        Height="40"
-                        Width="40"
+                        Height="30"
+                        Width="30"
                         Background="White" />
                 <Label Content=" - WOLNE " 
                        VerticalAlignment="Center"
                        Foreground="White"
-                       FontSize="20"/>
+                       FontSize="16"/>
             </StackPanel>
             <StackPanel Orientation="Horizontal"
                         Margin="5">
                 <Border Padding="3"
-                        Height="40"
-                        Width="40"
+                        Height="30"
+                        Width="30"
                         Background="Blue" />
                 <Label Content=" - WYBRANE "
                        VerticalAlignment="Center"
                        Foreground="White"
-                       FontSize="20" />
+                       FontSize="16" />
             </StackPanel>
             <StackPanel Orientation="Horizontal"
                         Margin="5">
                 <Border Padding="3"
-                        Height="40"
-                        Width="40"
+                        Height="30"
+                        Width="30"
                         Background="Red" />
                 <Label Content=" - ZAJĘTE"
                        VerticalAlignment="Center"
                        Foreground="White"
-                       FontSize="20" />
+                       FontSize="16" />
             </StackPanel>
         </StackPanel>
 
@@ -84,10 +83,50 @@
                    FontSize="15"
                    Foreground="White" />
             <DataGrid 
-                
+                Margin="5,0,5,0"
+                ItemsSource="{Binding BiznesClassSeatRows}"
+                Height="180"
+                HeadersVisibility="None"
                 />
 
         </StackPanel>
+        <StackPanel Orientation="Vertical"
+                    Grid.Row="3"
+                    Grid.Column="3">
+            <Label Content="KLASA BIZNES"
+                   HorizontalAlignment="Center"
+                   FontSize="15"
+                   Foreground="White" />
+            <DataGrid 
+                Margin="5,0,5,0"
+                Height="180"
+                HeadersVisibility="None"
+                ItemsSource="{Binding EconomicClassSeatRows}">
+            </DataGrid>
 
+        </StackPanel>
+
+        <StackPanel Orientation="Horizontal"
+                    Grid.Row="4"
+                    Grid.Column="3"
+                    HorizontalAlignment="Right">
+            <Button Content="ANULUJ"
+                    Width="100"
+                    Background="White"
+                    BorderBrush="Transparent"
+                    FontSize="18"
+                    Foreground="#FF00488B"
+                    Margin="5"
+                    Command="{Binding TimetableNavigationCommand}"/>
+            <Button Content="POTWIERDŹ"
+                    Width="120"
+                    Background="White"
+                    BorderBrush="Transparent"
+                    FontSize="18"
+                    Foreground="#FF00488B"
+                    Margin="5"
+                    Command="{Binding ConfirmNavigationCommand}"
+                    />
+        </StackPanel>
     </Grid>
 </UserControl>

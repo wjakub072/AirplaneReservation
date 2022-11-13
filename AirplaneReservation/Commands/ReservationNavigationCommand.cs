@@ -1,7 +1,7 @@
 ﻿using AirplaneReservation.Services;
 using AirplaneReservation.ViewModels;
 
-namespace AirplaneReservation.Commands.PassengerAmountCommands
+namespace AirplaneReservation.Commands
 {
     internal class ReservationNavigationCommand : CommandBase
     {

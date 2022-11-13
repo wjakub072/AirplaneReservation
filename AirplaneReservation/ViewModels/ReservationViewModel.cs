@@ -1,11 +1,12 @@
 ﻿using AirplaneReservation.Commands;
 using AirplaneReservation.Models;
 using AirplaneReservation.Services;
+using System.Collections.Generic;
 using System.Windows.Input;
 
 namespace AirplaneReservation.ViewModels
 {
-    internal class ReservationViewModel : ViewModelBase
+	internal class ReservationViewModel : ViewModelBase
     {
 		private Flight _selectedFlight;
 
@@ -23,14 +24,17 @@ namespace AirplaneReservation.ViewModels
 			}
 		}
 
+		public string[][] BiznesClassSeatRows { get; set; }
+
+
 
 		public ICommand TimetableNavigationCommand { get; }
 		public ICommand ConfirmNavigationCommand { get; }
 		public ReservationViewModel(INavigationService timetableNavigationService, INavigationService confirmationNavigationService)
 		{
+			BiznesClassSeatRows = new string[][] { new string[] { "A1", "B1" }, new string[] { "A2", "B2" } };
 
-
-			TimetableNavigationCommand = new TimetableNavigationCommand(timetableNavigationService);
+            TimetableNavigationCommand = new TimetableNavigationCommand(timetableNavigationService);
             ConfirmNavigationCommand = new ConfirmNavigationCommand(confirmationNavigationService);
 		}
 

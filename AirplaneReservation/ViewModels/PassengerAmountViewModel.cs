@@ -26,13 +26,16 @@ namespace AirplaneReservation.ViewModels
 		public ICommand TimetableNavigationCommand { get; }
 		public ICommand ReservationNavigationCommand { get; }
 
-		public PassengerAmountViewModel(INavigationService timetableNavigationService, IParameterNavigationService reservationNavigationCommand)
+		public PassengerAmountViewModel(INavigationService timetableNavigationService, 
+			IParameterNavigationService reservationNavigationCommand)
 		{
 			LessPassengersCommand = new LessPassengersCommand(this);
 			MorePassengersCommand = new MorePassengersCommand(this);
 
-			TimetableNavigationCommand = new TimetableNavigationCommand(timetableNavigationService);
-			ReservationNavigationCommand = new ReservationNavigationCommand(this, reservationNavigationCommand);
+			TimetableNavigationCommand = 
+				new TimetableNavigationCommand(timetableNavigationService);
+			ReservationNavigationCommand = 
+				new ReservationNavigationCommand(this, reservationNavigationCommand);
 		}
     }
 }

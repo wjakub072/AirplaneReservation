@@ -87,6 +87,8 @@
                 ItemsSource="{Binding BiznesClassSeatRows}"
                 Height="180"
                 HeadersVisibility="None"
+                SelectionMode="Extended"
+                SelectionUnit="Cell"
                 />
 
         </StackPanel>

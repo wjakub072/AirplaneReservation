@@ -6,18 +6,19 @@ namespace AirplaneReservation.Commands
     internal class PassengerAmountNavigationCommand : CommandBase
     {
         private readonly TimetableViewModel _timeTableViewModel;
-        private readonly IParameterNavigationService _navigationService;
+        private readonly IParameterNavigationService _passengerAmountNavigationService;
 
-        public PassengerAmountNavigationCommand(TimetableViewModel timeTableViewModel, IParameterNavigationService navigationService)
+        public PassengerAmountNavigationCommand(TimetableViewModel timeTableViewModel, 
+            IParameterNavigationService passengerAmountNavigationService)
         {
             _timeTableViewModel = timeTableViewModel;
-            _navigationService = navigationService;
+            _passengerAmountNavigationService = passengerAmountNavigationService;
         }
 
         public override void Execute(object parameter)
         {
             // navigate with selected flight passed as parameter
-            _navigationService.Navigate(_timeTableViewModel.SelectedFlight);
+            _passengerAmountNavigationService.Navigate(_timeTableViewModel.SelectedFlight);
         }
     }
 }

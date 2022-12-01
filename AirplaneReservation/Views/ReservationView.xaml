@@ -4,9 +4,12 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:AirplaneReservation.Views"
+             xmlns:i="http://schemas.microsoft.com/xaml/behaviors"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
+
     <Grid Background="#FF00488B">
+
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="10" />
             <ColumnDefinition Width="140" />
@@ -82,15 +85,104 @@
                    HorizontalAlignment="Center"
                    FontSize="15"
                    Foreground="White" />
+
+
             <DataGrid 
                 Margin="5,0,5,0"
-                ItemsSource="{Binding BiznesClassSeatRows}"
                 Height="180"
-                HeadersVisibility="None"
                 SelectionMode="Extended"
                 SelectionUnit="Cell"
-                />
+                CanUserAddRows="False"
+                CanUserDeleteRows="False"
+                CanUserReorderColumns="False"
+                CanUserResizeColumns="False"
+                CanUserResizeRows="False"
+                CanUserSortColumns="False"
+                ItemsSource="{Binding BiznesClassSeatRows}"
+                >
+                
+                <DataGrid.Columns>
+          
+                    <DataGridTemplateColumn>
+                        <DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate>
+                                <StackPanel Orientation="Vertical">
+                                    <Label HorizontalAlignment="Center" Content="{Binding Path=SeatsInRow[0].Number}"/>
+                                    <Button Background="{Binding StateColor}" 
+                                            Margin="3,0,3,3" 
+                                            Command="{Binding SelectSeatCommand}"
+                                            Width="30" 
+                                            Height="30">
+                                    </Button>
+                                </StackPanel>
+                                
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+                    </DataGridTemplateColumn>
+                    <DataGridTemplateColumn>
+                        <DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate>
+                                <StackPanel Orientation="Vertical">
+                                    <Label HorizontalAlignment="Center" Content="{Binding Path=SeatsInRow[0].Number}"/>
+                                    <Button Background="Green" 
+                                               Width="30" Height="30">
+                                    </Button>
+                                </StackPanel>
 
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+                    </DataGridTemplateColumn>
+                </DataGrid.Columns>
+                
+                
+                <!--<DataGrid.ItemTemplate>
+                    <DataTemplate>
+                        <DataTemplate.Resources>
+                            <Style TargetType="TextBlock">
+                                <Setter Property="Text" Value="{Binding Path=Item[0].Number}"/>
+                                <Setter Property="FontSize" Value="18"/>
+
+                            </Style>
+                        </DataTemplate.Resources>
+                        <TextBlock 
+                                        Margin="10"
+                                        Width="30"
+                                        Height="30"
+                                        Background="Blue"/>
+                    </DataTemplate>
+                </DataGrid.ItemTemplate>-->
+            </DataGrid>
+
+            <!--<DataGrid 
+                Margin="5,0,5,0"
+                Height="180"
+                SelectionMode="Extended"
+                SelectionUnit="Cell">
+
+                
+                
+                
+                <DataGrid.Resources>
+                    <Style TargetType="{x:Type DataGridCell}">
+                        <Setter Property="Template">
+                            <Setter.Value>
+                                <ControlTemplate TargetType="{x:Type DataGridCell}">
+                                    <Label Background="Green" Content="{Binding Number}">
+                                    </Label>
+                                </ControlTemplate>
+                            </Setter.Value>
+                        </Setter>
+                        <Setter Property="Padding" Value="1"/>
+                    </Style>
+                </DataGrid.Resources>
+                
+
+                <i:Interaction.Triggers>
+                    <i:EventTrigger EventName="SelectionChanged">
+                        <i:InvokeCommandAction Command=""/>
+                    </i:EventTrigger>
+                </i:Interaction.Triggers>
+            </DataGrid>-->
         </StackPanel>
         <StackPanel Orientation="Vertical"
                     Grid.Row="3"
@@ -103,7 +195,7 @@
                 Margin="5,0,5,0"
                 Height="180"
                 HeadersVisibility="None"
-                ItemsSource="{Binding EconomicClassSeatRows}">
+                >
             </DataGrid>
 
         </StackPanel>

@@ -1,4 +1,4 @@
-﻿using AirplaneReservation.Services;
+﻿using AirplaneReservation.Services.Interfaces;
 
 namespace AirplaneReservation.Commands
 {

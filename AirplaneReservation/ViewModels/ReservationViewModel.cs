@@ -1,17 +1,17 @@
 ﻿using AirplaneReservation.Commands;
+using AirplaneReservation.Factories;
 using AirplaneReservation.Models;
-using AirplaneReservation.Services;
+using AirplaneReservation.Providers;
+using AirplaneReservation.Services.Interfaces;
 using AirplaneReservation.ViewModels.AirplaneSeats;
 using System.Collections.Generic;
-using System.Data;
 using System.Windows.Input;
 
 namespace AirplaneReservation.ViewModels
 {
-	internal class ReservationViewModel : ViewModelBase
+	internal sealed class ReservationViewModel : ViewModelBase
     {
 		private Flight _selectedFlight;
-
 		public Flight SelectedFlight
 		{
 			get { return _selectedFlight; }
@@ -26,25 +26,32 @@ namespace AirplaneReservation.ViewModels
 			}
 		}
 
-		public List<AirplaneSeatRowsViewModel> BiznesClassSeatRows { get; set; }
+		public int AmountOfPassengers { get; set; }
 
-
+		public List<AirplaneSeatRowViewModel> BiznesClassSeatRows { get; set; }
+		public List<AirplaneSeatRowViewModel> EconomicClassSeatRows { get; set; }
 
 		public ICommand TimetableNavigationCommand { get; }
 		public ICommand ConfirmNavigationCommand { get; }
-		private ICommand loadSeatConfiguration;
-		public ReservationViewModel(INavigationService timetableNavigationService, INavigationService confirmationNavigationService)
-		{
-			loadSeatConfiguration = new LoadSeatConfiguration(this);
-			loadSeatConfiguration.Execute(null);
-			//         var esClassSeatRows = new List<List<SeatElementViewModel>>()
-			//{ 
-			//	new List<SeatElementViewModel> { new SeatElementViewModel() { Number = new string[] { "A1", "A2" } }, new SeatElementViewModel() { Number = new string[] { "A1", "A2" } } },
-			//	new List<SeatElementViewModel> { new SeatElementViewModel() { Number = new string[] { "A1", "A2" } }, new SeatElementViewModel() { Number = new string[] { "A1", "A2" } } } 
-			//};
 
-            TimetableNavigationCommand = new TimetableNavigationCommand(timetableNavigationService);
-            ConfirmNavigationCommand = new ConfirmNavigationCommand(confirmationNavigationService);
+		// As loading isn't a command that we attach to any button it's declared private
+		private ICommand loadSeatConfiguration;
+
+		public ReservationViewModel(INavigationService timetableNavigationService, INavigationService confirmationNavigationService, IReservationFactory reservationFactory, IDatabaseAccessService databaseAccessService, IDatabaseProvider databaseProvider)
+		{
+			loadSeatConfiguration = new LoadSeatConfiguration(
+				databaseProvider, 
+				this);
+			loadSeatConfiguration.Execute(null);
+
+            TimetableNavigationCommand = new TimetableNavigationCommand(
+				timetableNavigationService);
+
+            ConfirmNavigationCommand = new ConfirmNavigationCommand(
+				confirmationNavigationService, 
+				reservationFactory, 
+				databaseAccessService, 
+				this);
 		}
 
     }

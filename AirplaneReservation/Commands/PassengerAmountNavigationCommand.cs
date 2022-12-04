@@ -1,9 +1,9 @@
-﻿using AirplaneReservation.Services;
+﻿using AirplaneReservation.Services.Interfaces;
 using AirplaneReservation.ViewModels;
 
 namespace AirplaneReservation.Commands
 {
-    internal class PassengerAmountNavigationCommand : CommandBase
+    internal sealed class PassengerAmountNavigationCommand : CommandBase
     {
         private readonly TimetableViewModel _timeTableViewModel;
         private readonly IParameterNavigationService _passengerAmountNavigationService;

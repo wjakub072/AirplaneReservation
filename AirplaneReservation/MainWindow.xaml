@@ -7,7 +7,7 @@
         xmlns:views="clr-namespace:AirplaneReservation.Views"
         xmlns:viewModels="clr-namespace:AirplaneReservation.ViewModels"
         mc:Ignorable="d"
-        Title="AirplaneReservation" Height="450" Width="800">
+        Title="AirplaneReservation" Height="510" Width="820">
     <Grid Grid.Row="1">
         <Grid.Resources>
             <DataTemplate DataType="{x:Type viewModels:TimetableViewModel}">

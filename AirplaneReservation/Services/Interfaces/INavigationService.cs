@@ -1,4 +1,4 @@
-﻿namespace AirplaneReservation.Services
+﻿namespace AirplaneReservation.Services.Interfaces
 {
     public interface INavigationService
     {

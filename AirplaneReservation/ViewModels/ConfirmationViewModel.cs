@@ -1,4 +1,5 @@
 ﻿using AirplaneReservation.Commands;
+using AirplaneReservation.Services.Interfaces;
 using System.Windows.Input;
 
 namespace AirplaneReservation.ViewModels
@@ -7,7 +8,7 @@ namespace AirplaneReservation.ViewModels
     {
         public ICommand TimetableNavigationCommand { get; }
 
-        public ConfirmationViewModel(Services.INavigationService timetableNavigationService)
+        public ConfirmationViewModel(INavigationService timetableNavigationService)
         {
             TimetableNavigationCommand = new TimetableNavigationCommand(timetableNavigationService);
         }

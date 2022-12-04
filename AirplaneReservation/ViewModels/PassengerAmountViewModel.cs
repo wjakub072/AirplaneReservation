@@ -1,15 +1,14 @@
 ﻿using AirplaneReservation.Commands.PassengerAmountCommands;
 using AirplaneReservation.Commands;
 using AirplaneReservation.Models;
-using AirplaneReservation.Services;
 using System.Windows.Input;
+using AirplaneReservation.Services.Interfaces;
 
 namespace AirplaneReservation.ViewModels
 {
-	internal class PassengerAmountViewModel : ViewModelBase
+    internal sealed class PassengerAmountViewModel : ViewModelBase
     {
 		private int _passengerAmount = 1;
-
 		public int PassengerAmount
         {
 			get { return _passengerAmount; }
@@ -26,16 +25,13 @@ namespace AirplaneReservation.ViewModels
 		public ICommand TimetableNavigationCommand { get; }
 		public ICommand ReservationNavigationCommand { get; }
 
-		public PassengerAmountViewModel(INavigationService timetableNavigationService, 
-			IParameterNavigationService reservationNavigationCommand)
+		public PassengerAmountViewModel(INavigationService timetableNavigationService, IParameterNavigationService reservationNavigationCommand)
 		{
 			LessPassengersCommand = new LessPassengersCommand(this);
 			MorePassengersCommand = new MorePassengersCommand(this);
 
-			TimetableNavigationCommand = 
-				new TimetableNavigationCommand(timetableNavigationService);
-			ReservationNavigationCommand = 
-				new ReservationNavigationCommand(this, reservationNavigationCommand);
+			TimetableNavigationCommand = new TimetableNavigationCommand(timetableNavigationService);
+			ReservationNavigationCommand = new ReservationNavigationCommand(this, reservationNavigationCommand);
 		}
     }
 }

@@ -5,16 +5,12 @@ namespace AirplaneReservation.Models
     internal class Flight
     {
         public int Id { get; set; }
-        public string From { get; set; }
-        public string To { get; set; }
+        public string Departure { get; set; }
+        public string Destination { get; set; }
         public DateTime Date { get; set; }
-
-        public string DisplayValue
-        {
-            get
-            {
-                return string.Concat(From, " - ", To, "\n", Date.ToString("dd.MM hh:mm"));
-            }
-        }
+        public int BiznesSeatsInRow { get; set; }
+        public int BiznesRowsInPlane { get; set; }
+        public int EconomicSeatsInRow { get; set; }
+        public int EconomicRowsInPlane { get; set; }
     }
 }

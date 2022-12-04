@@ -1,16 +1,21 @@
-﻿using AirplaneReservation.Models;
+﻿using AirplaneReservation.Database;
+using AirplaneReservation.Factories;
+using AirplaneReservation.Models;
+using AirplaneReservation.Providers;
 using AirplaneReservation.Services;
+using AirplaneReservation.Services.Interfaces;
 using AirplaneReservation.Stores;
 using AirplaneReservation.ViewModels;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using System;
+using System.IO;
+using System.Reflection.Metadata;
 using System.Windows;
 
 namespace AirplaneReservation
 {
-    /// <summary>
-    /// Interaction logic for App.xaml
-    /// </summary>
     public partial class App : Application
     {
         private readonly IHost _host;
@@ -20,10 +25,12 @@ namespace AirplaneReservation
             _host = Host.CreateDefaultBuilder()
                 .ConfigureServices((context, services) =>
                 {
-                    //services.AddDbContext<ApplicationDatabaseContext>(options =>
-                    //{
-                    //    options.UseSqlServer(context.Configuration.GetConnectionString("DatabaseServer"));
-                    //});
+                    services.AddDbContext<ApplicationDbContext>(options =>
+                    {
+                        var databasePath = Path.Combine(_host.Services.GetRequiredService<IHostingEnvironment>().ContentRootPath, "database.sqlite3");
+                        options.UseSqlite(string.Concat("Data Source=", databasePath));
+                    });
+
                     ConfigureServices(services);
                 })
                 .Build();
@@ -34,25 +41,41 @@ namespace AirplaneReservation
             //stores
             services.AddSingleton<NavigationStore>();
 
+            //factories 
+            services.AddTransient<IReservationFactory, ReservationFactory>();
+
+            //services
+            services.AddSingleton<IDatabaseAccessService, DatabaseAccessService>();
+
             //viewmodels
             services.AddSingleton<MainViewModel>();
             services.AddSingleton<TimetableViewModel>(tt =>
                 new TimetableViewModel(TimetableToPassengerAmountNavigation()));
 
             services.AddTransient<PassengerAmountViewModel>(pa => 
-                new PassengerAmountViewModel(TimetableNavigation(), PassengerAmountToReservationNavigation()));
+                new PassengerAmountViewModel(
+                    TimetableNavigation(), 
+                    PassengerAmountToReservationNavigation()));
 
             services.AddTransient<ReservationViewModel>(r =>
-                new ReservationViewModel(TimetableNavigation(), ReservationToConfirmationNavigation()));
+                new ReservationViewModel(
+                    TimetableNavigation(), 
+                    ReservationToConfirmationNavigation(),
+                    // WARNING: Always use GetRequiredService with dependency injection to prevent Null Services
+                    _host.Services.GetRequiredService<IReservationFactory>(),
+                    _host.Services.GetRequiredService<IDatabaseAccessService>(),
+                    _host.Services.GetRequiredService<IDatabaseProvider>()));
 
             services.AddTransient<ConfirmationViewModel>(c =>
                 new ConfirmationViewModel(TimetableNavigation()));
-            //views
+
+            //MainWindow
             services.AddSingleton<MainWindow>(m => new MainWindow()
             {
                 DataContext = m.GetRequiredService<MainViewModel>()
             });
         }
+
         protected override async void OnStartup(StartupEventArgs e)
         {
             await _host.StartAsync();
@@ -91,13 +114,19 @@ namespace AirplaneReservation
                         return passengerAmountViewModel;
                     });
         }
+       
         private IParameterNavigationService PassengerAmountToReservationNavigation()
         {
             return new ParameterNavigationService(_host.Services.GetRequiredService<NavigationStore>(),
-                (parameter) => 
-                    {
+                (parameters) =>
+                {       
+                        // WARNING: Navigation parameter always has to be converted to their type
+                        // reason: parameters are passed as an object for universal use
+                        Tuple<Flight, int> tupleParameters = parameters as Tuple<Flight, int>;
+
                         var reservationViewModel = _host.Services.GetRequiredService<ReservationViewModel>();
-                        reservationViewModel.SelectedFlight = parameter as Flight;
+                        reservationViewModel.SelectedFlight = tupleParameters.Item1;
+                        reservationViewModel.AmountOfPassengers = tupleParameters.Item2;
                         return reservationViewModel;
                     });
         }

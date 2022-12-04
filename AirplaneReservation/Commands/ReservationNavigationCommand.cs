@@ -1,5 +1,7 @@
-﻿using AirplaneReservation.Services;
+﻿using AirplaneReservation.Models;
+using AirplaneReservation.Services.Interfaces;
 using AirplaneReservation.ViewModels;
+using System;
 
 namespace AirplaneReservation.Commands
 {
@@ -16,7 +18,7 @@ namespace AirplaneReservation.Commands
 
         public override void Execute(object parameter)
         {
-            _reservationNavigationCommand.Navigate(_passengerAmountViewModel.SelectedFlight);
+            _reservationNavigationCommand.Navigate(new Tuple<Flight, int>(_passengerAmountViewModel.SelectedFlight, _passengerAmountViewModel.PassengerAmount));
         }
     }
 }

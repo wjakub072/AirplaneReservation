@@ -6,7 +6,7 @@
              xmlns:local="clr-namespace:AirplaneReservation.Views"
              xmlns:i="http://schemas.microsoft.com/xaml/behaviors"
              mc:Ignorable="d" 
-             d:DesignHeight="450" d:DesignWidth="800">
+             d:DesignHeight="480" d:DesignWidth="820">
 
     <Grid Background="#FF00488B">
 
@@ -86,12 +86,17 @@
                    FontSize="15"
                    Foreground="White" />
 
-
             <DataGrid 
                 Margin="5,0,5,0"
-                Height="180"
+                Height="250"
+                Width="197"
                 SelectionMode="Extended"
                 SelectionUnit="Cell"
+                BorderBrush="Transparent"
+                AutoGenerateColumns="False"
+                VerticalScrollBarVisibility="Disabled"
+                HorizontalScrollBarVisibility="Disabled"
+                HeadersVisibility="None"
                 CanUserAddRows="False"
                 CanUserDeleteRows="False"
                 CanUserReorderColumns="False"
@@ -99,103 +104,316 @@
                 CanUserResizeRows="False"
                 CanUserSortColumns="False"
                 ItemsSource="{Binding BiznesClassSeatRows}"
+                Background="#FF00488B"
                 >
-                
+                <DataGrid.Resources>
+                    <Style TargetType="{x:Type DataGridCell}">
+                        <Style.Triggers>
+                            <Trigger Property="DataGridCell.IsSelected" Value="True">
+                                <Setter Property="Background" Value="Transparent" />
+                            </Trigger>
+                        </Style.Triggers>
+                    </Style>
+                </DataGrid.Resources>
                 <DataGrid.Columns>
-          
                     <DataGridTemplateColumn>
                         <DataGridTemplateColumn.CellTemplate>
                             <DataTemplate>
-                                <StackPanel Orientation="Vertical">
-                                    <Label HorizontalAlignment="Center" Content="{Binding Path=SeatsInRow[0].Number}"/>
-                                    <Button Background="{Binding StateColor}" 
+                                <StackPanel Orientation="Vertical" DataContext="{Binding SeatsInRow[0]}">
+                                    <Label HorizontalAlignment="Center" Content="{Binding Path=Number}"/>
+                                    <Button Background="{Binding StateBrush, Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}" 
                                             Margin="3,0,3,3" 
                                             Command="{Binding SelectSeatCommand}"
                                             Width="30" 
                                             Height="30">
                                     </Button>
                                 </StackPanel>
-                                
                             </DataTemplate>
                         </DataGridTemplateColumn.CellTemplate>
                     </DataGridTemplateColumn>
                     <DataGridTemplateColumn>
                         <DataGridTemplateColumn.CellTemplate>
                             <DataTemplate>
-                                <StackPanel Orientation="Vertical">
-                                    <Label HorizontalAlignment="Center" Content="{Binding Path=SeatsInRow[0].Number}"/>
-                                    <Button Background="Green" 
-                                               Width="30" Height="30">
+                                <StackPanel Orientation="Vertical" DataContext="{Binding SeatsInRow[1]}">
+                                    <Label HorizontalAlignment="Center" Content="{Binding Path=Number}"/>
+                                    <Button Background="{Binding StateBrush, Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}" 
+                                            Margin="3,0,3,3" 
+                                            Command="{Binding SelectSeatCommand}"
+                                            Width="30" 
+                                            Height="30">
                                     </Button>
                                 </StackPanel>
-
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+                    </DataGridTemplateColumn>
+                    <DataGridTemplateColumn>
+                        <DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate>
+                                <StackPanel Orientation="Vertical" DataContext="{Binding SeatsInRow[2]}">
+                                    <Label HorizontalAlignment="Center" Content="{Binding Path=Number}"/>
+                                    <Button Background="{Binding StateBrush, Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}" 
+                                            Margin="3,0,3,3" 
+                                            Command="{Binding SelectSeatCommand}"
+                                            Width="30" 
+                                            Height="30">
+                                    </Button>
+                                </StackPanel>
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+                    </DataGridTemplateColumn>
+                    <DataGridTemplateColumn>
+                        <DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate>
+                                <StackPanel Orientation="Vertical" DataContext="{Binding SeatsInRow[3]}">
+                                    <Label HorizontalAlignment="Center" Content="{Binding Path=Number}"/>
+                                    <Button Background="{Binding StateBrush, Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}" 
+                                            Margin="3,0,3,3" 
+                                            Command="{Binding SelectSeatCommand}"
+                                            Width="30" 
+                                            Height="30">
+                                    </Button>
+                                </StackPanel>
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+                    </DataGridTemplateColumn>
+                    <DataGridTemplateColumn>
+                        <DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate>
+                                <StackPanel Orientation="Vertical" DataContext="{Binding SeatsInRow[4]}">
+                                    <Label HorizontalAlignment="Center" Content="{Binding Path=Number}"/>
+                                    <Button Background="{Binding StateBrush, Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}" 
+                                            Margin="3,0,3,3" 
+                                            Command="{Binding SelectSeatCommand}"
+                                            Width="30" 
+                                            Height="30">
+                                    </Button>
+                                </StackPanel>
                             </DataTemplate>
                         </DataGridTemplateColumn.CellTemplate>
                     </DataGridTemplateColumn>
                 </DataGrid.Columns>
-                
-                
-                <!--<DataGrid.ItemTemplate>
-                    <DataTemplate>
-                        <DataTemplate.Resources>
-                            <Style TargetType="TextBlock">
-                                <Setter Property="Text" Value="{Binding Path=Item[0].Number}"/>
-                                <Setter Property="FontSize" Value="18"/>
-
-                            </Style>
-                        </DataTemplate.Resources>
-                        <TextBlock 
-                                        Margin="10"
-                                        Width="30"
-                                        Height="30"
-                                        Background="Blue"/>
-                    </DataTemplate>
-                </DataGrid.ItemTemplate>-->
             </DataGrid>
-
-            <!--<DataGrid 
-                Margin="5,0,5,0"
-                Height="180"
-                SelectionMode="Extended"
-                SelectionUnit="Cell">
-
-                
-                
-                
-                <DataGrid.Resources>
-                    <Style TargetType="{x:Type DataGridCell}">
-                        <Setter Property="Template">
-                            <Setter.Value>
-                                <ControlTemplate TargetType="{x:Type DataGridCell}">
-                                    <Label Background="Green" Content="{Binding Number}">
-                                    </Label>
-                                </ControlTemplate>
-                            </Setter.Value>
-                        </Setter>
-                        <Setter Property="Padding" Value="1"/>
-                    </Style>
-                </DataGrid.Resources>
-                
-
-                <i:Interaction.Triggers>
-                    <i:EventTrigger EventName="SelectionChanged">
-                        <i:InvokeCommandAction Command=""/>
-                    </i:EventTrigger>
-                </i:Interaction.Triggers>
-            </DataGrid>-->
         </StackPanel>
+        
+        
         <StackPanel Orientation="Vertical"
                     Grid.Row="3"
                     Grid.Column="3">
-            <Label Content="KLASA BIZNES"
+            <Label Content="KLASA EKONOMICZNA"
                    HorizontalAlignment="Center"
                    FontSize="15"
                    Foreground="White" />
             <DataGrid 
                 Margin="5,0,5,0"
-                Height="180"
+                Height="250"
+                Width="409"
+                SelectionMode="Extended"
+                SelectionUnit="Cell"
+                BorderBrush="Transparent"
+                AutoGenerateColumns="False"
+                VerticalScrollBarVisibility="Disabled"
+                HorizontalScrollBarVisibility="Disabled"
                 HeadersVisibility="None"
+                CanUserAddRows="False"
+                CanUserDeleteRows="False"
+                CanUserReorderColumns="False"
+                CanUserResizeColumns="False"
+                CanUserResizeRows="False"
+                CanUserSortColumns="False"
+                ItemsSource="{Binding EconomicClassSeatRows}"
+                Background="#FF00488B"
                 >
+                <DataGrid.Resources>
+                    <Style TargetType="{x:Type DataGridCell}">
+                        <Style.Triggers>
+                            <Trigger Property="DataGridCell.IsSelected" Value="True">
+                                <Setter Property="Background" Value="Transparent" />
+                            </Trigger>
+                        </Style.Triggers>
+                    </Style>
+                </DataGrid.Resources>
+                <DataGrid.Columns>
+                    <DataGridTemplateColumn>
+                        <DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate>
+                                <StackPanel Orientation="Vertical" DataContext="{Binding SeatsInRow[0]}">
+                                    <Label HorizontalAlignment="Center" Content="{Binding Path=Number}"/>
+                                    <Button Background="{Binding StateBrush, Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}" 
+                                            Command="{Binding SelectSeatCommand}"
+                                            Margin="3,0,3,3" 
+                                            Width="20" 
+                                            Height="30">
+                                    </Button>
+                                </StackPanel>
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+                    </DataGridTemplateColumn>
+                    <DataGridTemplateColumn>
+                        <DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate>
+                                <StackPanel Orientation="Vertical" DataContext="{Binding SeatsInRow[1]}">
+                                    <Label HorizontalAlignment="Center" Content="{Binding Path=Number}"/>
+                                    <Button Background="{Binding StateBrush, Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}" 
+                                            Command="{Binding SelectSeatCommand}"
+                                            Margin="3,0,3,3" 
+                                            Width="20" 
+                                            Height="30">
+                                    </Button>
+                                </StackPanel>
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+                    </DataGridTemplateColumn>
+                    <DataGridTemplateColumn>
+                        <DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate>
+                                <StackPanel Orientation="Vertical" DataContext="{Binding SeatsInRow[2]}">
+                                    <Label HorizontalAlignment="Center" Content="{Binding Path=Number}"/>
+                                    <Button Background="{Binding StateBrush, Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}" 
+                                            Command="{Binding SelectSeatCommand}"
+                                            Margin="3,0,3,3" 
+                                            Width="20" 
+                                            Height="30">
+                                    </Button>
+                                </StackPanel>
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+                    </DataGridTemplateColumn>
+                    <DataGridTemplateColumn>
+                        <DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate>
+                                <StackPanel Orientation="Vertical" DataContext="{Binding SeatsInRow[3]}">
+                                    <Label HorizontalAlignment="Center" Content="{Binding Path=Number}"/>
+                                    <Button Background="{Binding StateBrush, Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}" 
+                                            Command="{Binding SelectSeatCommand}"
+                                            Margin="3,0,3,3" 
+                                            Width="20" 
+                                            Height="30">
+                                    </Button>
+                                </StackPanel>
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+                    </DataGridTemplateColumn>
+                    <DataGridTemplateColumn>
+                        <DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate>
+                                <StackPanel Orientation="Vertical" DataContext="{Binding SeatsInRow[4]}">
+                                    <Label HorizontalAlignment="Center" Content="{Binding Path=Number}"/>
+                                    <Button Background="{Binding StateBrush, Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}" 
+                                            Command="{Binding SelectSeatCommand}"
+                                            Margin="3,0,3,3" 
+                                            Width="20" 
+                                            Height="30">
+                                    </Button>
+                                </StackPanel>
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+                    </DataGridTemplateColumn>
+                    <DataGridTemplateColumn>
+                        <DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate>
+                                <StackPanel Orientation="Vertical" DataContext="{Binding SeatsInRow[5]}">
+                                    <Label HorizontalAlignment="Center" Content="{Binding Path=Number}"/>
+                                    <Button Background="{Binding StateBrush, Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}" 
+                                            Command="{Binding SelectSeatCommand}"
+                                            Margin="3,0,3,3" 
+                                            Width="20" 
+                                            Height="30">
+                                    </Button>
+                                </StackPanel>
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+                    </DataGridTemplateColumn>
+                    <DataGridTemplateColumn>
+                        <DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate>
+                                <StackPanel Orientation="Vertical" DataContext="{Binding SeatsInRow[6]}">
+                                    <Label HorizontalAlignment="Center" Content="{Binding Path=Number}"/>
+                                    <Button Background="{Binding StateBrush, Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}" 
+                                            Command="{Binding SelectSeatCommand}"
+                                            Margin="3,0,3,3" 
+                                            Width="20" 
+                                            Height="30">
+                                    </Button>
+                                </StackPanel>
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+                    </DataGridTemplateColumn>
+                    <DataGridTemplateColumn>
+                        <DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate>
+                                <StackPanel Orientation="Vertical" DataContext="{Binding SeatsInRow[8]}">
+                                    <Label HorizontalAlignment="Center" Content="{Binding Path=Number}"/>
+                                    <Button Background="{Binding StateBrush, Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}" 
+                                            Command="{Binding SelectSeatCommand}"
+                                            Margin="3,0,3,3" 
+                                            Width="20" 
+                                            Height="30">
+                                    </Button>
+                                </StackPanel>
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+                    </DataGridTemplateColumn>
+                    <DataGridTemplateColumn>
+                        <DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate>
+                                <StackPanel Orientation="Vertical" DataContext="{Binding SeatsInRow[9]}">
+                                    <Label HorizontalAlignment="Center" Content="{Binding Path=Number}"/>
+                                    <Button Background="{Binding StateBrush, Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}" 
+                                            Command="{Binding SelectSeatCommand}"
+                                            Margin="3,0,3,3" 
+                                            Width="20" 
+                                            Height="30">
+                                    </Button>
+                                </StackPanel>
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+                    </DataGridTemplateColumn>
+                    <DataGridTemplateColumn>
+                        <DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate>
+                                <StackPanel Orientation="Vertical" DataContext="{Binding SeatsInRow[10]}">
+                                    <Label HorizontalAlignment="Center" Content="{Binding Path=Number}"/>
+                                    <Button Background="{Binding StateBrush, Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}" 
+                                            Command="{Binding SelectSeatCommand}"
+                                            Margin="3,0,3,3" 
+                                            Width="20" 
+                                            Height="30">
+                                    </Button>
+                                </StackPanel>
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+                    </DataGridTemplateColumn>
+                    <DataGridTemplateColumn>
+                        <DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate>
+                                <StackPanel Orientation="Vertical" DataContext="{Binding SeatsInRow[11]}">
+                                    <Label HorizontalAlignment="Center" Content="{Binding Path=Number}"/>
+                                    <Button Background="{Binding StateBrush, Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}" 
+                                            Command="{Binding SelectSeatCommand}"
+                                            Margin="3,0,3,3" 
+                                            Width="20" 
+                                            Height="30">
+                                    </Button>
+                                </StackPanel>
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+                    </DataGridTemplateColumn>
+                    <DataGridTemplateColumn>
+                        <DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate>
+                                <StackPanel Orientation="Vertical" DataContext="{Binding SeatsInRow[12]}">
+                                    <Label HorizontalAlignment="Center" Content="{Binding Path=Number}"/>
+                                    <Button Background="{Binding StateBrush, Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}" 
+                                            Command="{Binding SelectSeatCommand}"
+                                            Margin="3,0,3,3" 
+                                            Width="20" 
+                                            Height="30">
+                                    </Button>
+                                </StackPanel>
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+                    </DataGridTemplateColumn>
+                </DataGrid.Columns>
             </DataGrid>
 
         </StackPanel>

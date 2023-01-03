@@ -4,6 +4,7 @@ using AirplaneReservation.Models;
 using AirplaneReservation.Providers;
 using AirplaneReservation.Services.Interfaces;
 using AirplaneReservation.ViewModels.AirplaneSeats;
+using System;
 using System.Collections.Generic;
 using System.Windows.Input;
 
@@ -37,7 +38,11 @@ namespace AirplaneReservation.ViewModels
 		// As loading isn't a command that we attach to any button it's declared private
 		private ICommand loadSeatConfiguration;
 
-		public ReservationViewModel(INavigationService timetableNavigationService, INavigationService confirmationNavigationService, IReservationFactory reservationFactory, IDatabaseAccessService databaseAccessService, IDatabaseProvider databaseProvider)
+		public ReservationViewModel(INavigationService timetableNavigationService, 
+			INavigationService confirmationNavigationService,
+			IReservationFactory reservationFactory, 
+			IDatabaseAccessService databaseAccessService, 
+			IDatabaseProvider databaseProvider)
 		{
 			loadSeatConfiguration = new LoadSeatConfiguration(
 				databaseProvider, 

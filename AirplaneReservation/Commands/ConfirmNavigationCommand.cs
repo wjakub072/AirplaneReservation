@@ -1,4 +1,5 @@
-﻿using AirplaneReservation.Factories;
+﻿using AirplaneReservation.Exceptions;
+using AirplaneReservation.Factories;
 using AirplaneReservation.Services.Interfaces;
 using AirplaneReservation.ViewModels;
 using AirplaneReservation.ViewModels.AirplaneSeats;
@@ -26,30 +27,43 @@ namespace AirplaneReservation.Commands
 
         public override async Task ExecuteAsync(object parameter)
         {
-            var selectedSeats = new List<AirplaneSeatCellViewModel>();
-            foreach (var biznesRow in _viewModel.BiznesClassSeatRows)
+            try
             {
-                selectedSeats.AddRange(biznesRow.SeatsInRow.Where(c => c.Selected == true).ToList());
+                var selectedSeats = new List<AirplaneSeatCellViewModel>();
+                foreach (var biznesRow in _viewModel.BiznesClassSeatRows)
+                {
+                    selectedSeats.AddRange(biznesRow.SeatsInRow.Where(c => c.Selected == true).ToList());
+                }
+                foreach (var economicRow in _viewModel.EconomicClassSeatRows)
+                {
+                    selectedSeats.AddRange(economicRow.SeatsInRow.Where(c => c.Selected == true).ToList());
+                }
+
+                if (selectedSeats.Count != _viewModel.AmountOfPassengers)
+                {
+                    throw new ReservationException(_viewModel.AmountOfPassengers, selectedSeats.Count);
+                }
+
+                var newReservation = _reservationFactory.CreateReservation(selectedSeats, _viewModel.SelectedFlight.Id);
+
+                await _databaseAccessService.AddReservation(newReservation);
+
+                _confirmationNavigationService.Navigate();
             }
-            foreach (var economicRow in _viewModel.EconomicClassSeatRows)
+            catch (ReservationException rExt)
             {
-                selectedSeats.AddRange(economicRow.SeatsInRow.Where(c => c.Selected == true).ToList());
+                MessageBox.Show(rExt.Message,
+                        "Błąd",
+                        MessageBoxButton.OK,
+                        MessageBoxImage.Error);
             }
-
-            if (selectedSeats.Count != _viewModel.AmountOfPassengers)
+            catch (System.Exception)
             {
-                MessageBox.Show($"Wybrano niezgodną ilość miejsc ({selectedSeats.Count}) względem uprzednio zadeklarowanej ({_viewModel.AmountOfPassengers}).", 
-                    "Błąd", 
-                    MessageBoxButton.OK, 
-                    MessageBoxImage.Error);
-                return;
+                // EXCEPTION OF OTHER TYPE THAN RESERVATIONEXCEPTION ARE NOT PLANNED, 
+                // SO WE FILTER THEM WITH ABOVE STATEMENT 
+                // TODO: LOG TO DATABASE 
+                throw;
             }
-
-            var newReservation = _reservationFactory.CreateReservation(selectedSeats, _viewModel.SelectedFlight.Id);
-
-            await _databaseAccessService.AddReservation(newReservation);
-
-            _confirmationNavigationService.Navigate();
         }
     }
 }

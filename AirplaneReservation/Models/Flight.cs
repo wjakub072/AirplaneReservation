@@ -2,7 +2,7 @@
 
 namespace AirplaneReservation.Models
 {
-    internal class Flight
+    public class Flight
     {
         public int Id { get; set; }
         public string Departure { get; set; }

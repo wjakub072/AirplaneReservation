@@ -2,7 +2,7 @@
 
 namespace AirplaneReservation.Exceptions
 {
-    internal class ReservationException : Exception
+    public class ReservationException : Exception
     {        
         public int DeclaredAmount { get; set; }
         public int SelectedAmount { get; set; }

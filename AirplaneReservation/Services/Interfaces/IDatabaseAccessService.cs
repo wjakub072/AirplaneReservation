@@ -3,7 +3,7 @@ using System.Threading.Tasks;
 
 namespace AirplaneReservation.Services.Interfaces
 {
-    internal interface IDatabaseAccessService
+    public interface IDatabaseAccessService
     {
         Task AddReservation(Reservation newReservation);
     }

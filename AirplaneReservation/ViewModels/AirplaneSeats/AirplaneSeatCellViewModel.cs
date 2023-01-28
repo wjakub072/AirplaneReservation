@@ -5,7 +5,7 @@ using System.Windows.Media;
 
 namespace AirplaneReservation.ViewModels.AirplaneSeats
 {
-    internal class AirplaneSeatCellViewModel : ViewModelBase
+    public class AirplaneSeatCellViewModel : ViewModelBase
     {
         private bool _selected;
         public bool Selected

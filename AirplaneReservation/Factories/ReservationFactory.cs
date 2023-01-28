@@ -4,7 +4,7 @@ using System.Collections.Generic;
 
 namespace AirplaneReservation.Factories
 {
-    internal class ReservationFactory : IReservationFactory
+    public class ReservationFactory : IReservationFactory
     {
         public Reservation CreateReservation(IEnumerable<AirplaneSeatCellViewModel> selectedSeats, int flightId)
         {

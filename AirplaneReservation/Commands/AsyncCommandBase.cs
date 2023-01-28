@@ -35,7 +35,8 @@ namespace AirplaneReservation.Commands
             catch (Exception ex)
             {
                 string message = ex.GetBaseException().Message;
-                MessageBox.Show(message);
+                //MessageBox.Show(message);
+                throw;
             }
             finally
             {

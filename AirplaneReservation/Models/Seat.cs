@@ -1,6 +1,6 @@
 ﻿namespace AirplaneReservation.Models
 {
-    internal class Seat
+    public class Seat
     {
         public int Id { get; set; }
         public int ReservationId { get; set; }

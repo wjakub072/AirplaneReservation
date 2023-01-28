@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace AirplaneReservation.Database
 {
-    internal class ApplicationDbContext : DbContext
+    public class ApplicationDbContext : DbContext
     {
         public ApplicationDbContext(DbContextOptions options) : base(options) { }
 

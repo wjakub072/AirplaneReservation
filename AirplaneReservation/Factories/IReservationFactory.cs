@@ -4,7 +4,7 @@ using System.Collections.Generic;
 
 namespace AirplaneReservation.Factories
 {
-    internal interface IReservationFactory
+    public interface IReservationFactory
     {
         /// <summary>
         /// Make reservation for all selected seats. Method is used for mapping viewModels to DatabaseEntities. 

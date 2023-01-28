@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 
 namespace AirplaneReservation.Services
 {
-    internal sealed class DatabaseAccessService : IDatabaseAccessService
+    public sealed class DatabaseAccessService : IDatabaseAccessService
     {
         private readonly ApplicationDbContext _db;
 

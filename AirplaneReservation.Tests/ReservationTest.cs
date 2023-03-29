@@ -21,7 +21,7 @@ namespace AirplaneReservation.Tests
             try
             {
                 _viewModel.AmountOfPassengers = amountOfPassengers;
-                for (int i = 0; i <= selectedSealts; i++)
+                for (int i = 0; i < selectedSealts; i++)
                 {
                     _viewModel.EconomicClassSeatRows[0].SeatsInRow[i].Selected = true;
                 }
